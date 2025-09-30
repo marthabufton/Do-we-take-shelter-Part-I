@@ -1,0 +1,91 @@
+:: Baileys1
+<<nobr>>
+<p id="panel1" class="fade-text" style="font-size:1.5em;text-align:center;padding-top:75px;padding-bottom:55px;"><b>Moderators, household and community members:</b> read your instructions in the gamer handbook and listen to the latest reporting from Radio MAB.</p>
+
+<div id="link1" style="display:flex;height:100vh;justify-content:center;align-self:flex-end;" onclick="$('#panel1').toggle(); $('#link1').toggle(); $('#panel2').toggle();">
+    <img class="tower-backlight" src="./assets/images/manchester-radio-tower.svg"/>
+</div>
+<div class="fade-text" id="panel2" style="display: none;">
+    <div class="fade-text notepad-container">
+        <div class="notepad">
+            <div class="top">
+                <div style="display:flex;align-items:center;justify-content:end;height:100%;">
+                    <img class="megaphone-backlight" src="./assets/images/megaphone.svg" onclick="document.getElementById('recording1').play();"/>
+                    <audio id="recording1" src="./assets/audio/r1p5.mp3"></audio>
+                </div>
+            </div>
+            <div class="paper-container">
+                <div class="paper">
+                    Welcome to "Do we take shelter?" on Radio MAB, bringing you up-to-date reports on “high stakes” information for each round of game play.<br>
+                    <br>
+                    In Round One, you must ask these questions:<br>
+                    &ensp;&ensp;- Will there be another bombardment and, if so, when?<br>
+                    &ensp;&ensp;- Should you move back to the community shelter or stay in your own home another night?<br>
+                    &ensp;&ensp;- You already have some knowledge of the war. You must evaluate and record this evidence carefully! Who and what do you trust and why?<br>
+                    <br>
+                    Remember:<br>
+                    &ensp;&ensp;- Not everyone is an authority.<br>
+                    &ensp;&ensp;- Be on guard for misinformation and disinformation–even from people you know and like.<br>
+                    <br>
+                    What do you do next?<br>
+                    <br>
+                    The game master will signal the end of Round 1.<br>
+                    Be ready to share your evaluation with the other households after your kitchen table discussion.<br>
+                    <br>
+                    <p class="paper-end">[[Keep calm.|LunchtimeReports]]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<</nobr>>
+
+:: Baileys2
+<<nobr>>
+<p id="panel1" class="fade-text" style="font-size:1.5em;text-align:center;padding-top:75px;padding-bottom:45px;"><b>Moderators, household and community members:</b> read your instructions in the gamer handbook carefully. Listen to more reporting from Radio MAB. The clock is ticking.</p>
+
+<div id="link1" style="display:flex;height:100vh;justify-content:center;align-self:flex-end;" onclick="$('#panel1').toggle(); $('#link1').toggle(); $('#panel2').toggle();">
+    <img class="tower-backlight" src="./assets/images/manchester-radio-tower.svg"/>
+</div>
+<div class="fade-text" id="panel2" style="display: none;">
+    <div class="fade-text notepad-container">
+        <div class="notepad">
+            <div class="top">
+                <div style="display:flex;align-items:center;justify-content:end;height:100%;">
+                    <img class="megaphone-backlight" src="./assets/images/megaphone.svg" onclick="document.getElementById('recording2').play();"/>
+                    <audio id="recording2" src="./assets/audio/r2p7.mp3"></audio>
+                </div>
+            </div>
+            <div class="paper-container">
+                <div class="paper">
+                    Here is your lunchtime “high stakes” update from "Do we take shelter?" on Radio MAB.<br>
+                    <br>
+                    In Round Two, you have new information from two eyewitnesses.<br>
+                    <br>
+                    You must decide if you trust this primary, first-hand evidence. Think carefully:<br>
+                    &ensp;&ensp;- What have the eyewitnesses seen?<br>
+                    &ensp;&ensp;- Who have they talked to?<br>
+                    &ensp;&ensp;- Can they give you solid facts to help you decide what to do?<br>
+                    &ensp;&ensp;- Do you trust the information they offer?<br>
+                    <br>
+                    Be on guard: your own bias will influence what you believe to be true and what you believe to be false. Can you trust yourself to think clearly in this situation?<br>
+                    <br>
+                    The game master will signal the end of Round 2.<br>
+                    Be ready to share your evaluation with the other households after your kitchen table discussion.<br>
+                    <br>
+                    <p class="paper-end">[[Carry on.|ConclusionRounds1and2]]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<</nobr>>
+
+:: BaileysBreak
+<<nobr>>
+<<audio "pigeon-coo" volume 0.75 fadeoverto 5 0>>
+<p id="panel1" class="fade-text" style="font-size:1.5em;text-align:center;padding-top:75px;padding-bottom:45px;">Baileys take note: listen to your eyewitness account in the gamer handbook</p>
+<a data-passage="Gamemaster2" class="household-page">
+    <img class="tower-backlight" style="height:65vh;" src="./assets/images/pigeon.png"/>
+</a>
+<</nobr>>

@@ -1,0 +1,53 @@
+:: Community1
+<<nobr>>
+
+<p class="fade-text">''Dr. Garfield Williams:'' You are the moderator for the community members and will guide your group in its initial discussion of the information you have about the war with Germany.</p>
+
+<<timed 3s t8n>>
+<p>Answer the following questions:</p>
+<ul>
+    <li>Will there be another bombardment and, if so, when?</li>
+    <li>Should we move back to the community air raid shelter or stay in our own homes another night?</li>
+</ul>
+<<next 2s>>
+<p>To answer these questions, evaluate the information you currently have about the war and determine if it is:</p>
+<ul>
+    <li>Current</li>
+    <li>Authoritative</li>
+    <li>Truthful, which includes being accurate</li>
+</ul>
+
+<<next 2s>>
+<p>ou must also assess the bias that this information might reflect and identify any additional information you might need and be able to gather such as:</p>
+<ul>
+    <li>What is the Luftwaffe strategy for bombing English cities?</li>
+    <li>How many British people have been injured or died so far during the war?</li>
+    <li>What air raid precautions were in place in Britain during the war?</li>
+</ul>
+
+<<next 2s>>
+<p>What do you do next?</p>
+
+<<next 2s>>
+<p>Now, share your evaluation with the other households [[after your kitchen table discussion.|LunchtimeReports]]</p>
+
+<</timed>>
+<</nobr>>
+
+:: Community2
+<<nobr>>
+<p class="fade-text">In this round, you visit the following households and share the information that you have about the bombings:</p>
+
+<<timed 2s t8n>>
+<ul>
+    <li>''Dr. Garfield Williams:'' The Hendersons</li>
+    <li>''Mr. Leonard Johnson:'' The Empeys</li>
+    <li>''Mr. Khan:'' The Engels</li>
+    <li>''Mrs. Khan:'' The Sklars</li>
+</ul>
+<<next 2s>>
+<p>Now you will return to the main Round 2 page to [[choose your assigned household.|SelectHousehold2]]</p>
+
+<</timed>>
+
+<</nobr>>

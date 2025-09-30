@@ -1,0 +1,37 @@
+:: Debrief1
+!Round 1 debrief
+<<audio "kettle" volume 0 fadeoverto 30 0.75>>
+What do you now know?
+
+[[Proceed|LunchtimeReports]]
+<<nobr>>
+<<set _vapour to [7, 12, 3, 16, 8, 14, 1, 9, 17, 5, 11, 15, 4, 6, 18, 2, 13, 10, 19]>>
+<div class="teacup-container">
+    <div class="vapour">
+        <<for _i to 0; _i lt _vapour.length; _i++>>
+            <<set _style to "--i:"+_vapour[_i]+";">>
+            <span @style="_style"></span>
+        <</for>>
+    </div>
+    <img class="teacup" src="./assets/images/teacup-a.svg"/>
+</div>
+<</nobr>>
+
+:: Debrief2
+!Round 2 debrief
+<<audio "kettle" volume 0 fadeoverto 30 0.75>>
+What do you know now?
+
+[[Proceed|ConclusionRounds1and2]]
+<<nobr>>
+<<set _vapour to [7, 12, 3, 16, 8, 14, 1, 9, 17, 5, 11, 15, 4, 6, 18, 2, 13, 10, 19]>>
+<div class="teacup-container">
+    <div class="vapour">
+        <<for _i to 0; _i lt _vapour.length; _i++>>
+            <<set _style to "--i:"+_vapour[_i]+";">>
+            <span @style="_style"></span>
+        <</for>>
+    </div>
+    <img class="teacup" src="./assets/images/teacup-a.svg"/>
+</div>
+<</nobr>>

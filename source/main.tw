@@ -1,0 +1,232 @@
+:: StoryData
+{
+    "ifid": "7BB31A4A-9E10-48D9-A1CD-448A7E567A59",
+    "format": "SugarCube",
+    "format-version": "2.36.1",
+    "start": "Start"
+}
+
+:: StoryInit
+<<cacheaudio "game-theme" "./assets/audio/game-theme.mp3">>
+<<cacheaudio "opening-message" "./assets/audio/opening-message.mp3">>
+<<cacheaudio "pigeon12" "./assets/audio/pigeon12.mp3">>
+<<cacheaudio "pigeon34" "./assets/audio/pigeon34.mp3">>
+<<cacheaudio "kettle" "./assets/audio/kettle.mp3">>
+<<cacheaudio "marker" "./assets/audio/marker.mp3">>
+<<cacheaudio "fire" "./assets/audio/fire.mp3">>
+<<cacheaudio "shop-bell" "./assets/audio/shop-bell.mp3">>
+<<cacheaudio "church-bell" "./assets/audio/church-bell.mp3">>
+<<cacheaudio "bicycle-bell" "./assets/audio/bicycle-bell.mp3">>
+<<cacheaudio "motor-car" "./assets/audio/motor-car.mp3">>
+<<cacheaudio "streetcar-station" "./assets/audio/streetcar-station.mp3">>
+<<cacheaudio "pigeon-coo" "./assets/audio/pigeon-coo.mp3">>
+<<cacheaudio "westminster" "./assets/audio/westminster.mp3">>
+<<cacheaudio "clock-tick" "./assets/audio/clock-tick.mp3">>
+<<cacheaudio "air-raid" "./assets/audio/air-raid-siren.mp3">>
+<<cacheaudio "fire-engine" "./assets/audio/fire-engine.mp3">>
+
+:: StoryTitle
+Do we take shelter?
+
+:: Start
+
+<div class="game-title" style="margin-bottom: 55px;">
+!Do we take shelter?
+!!//Evaluating “high stakes” information//
+</div><<nobr>> /* Leave nobr on this line - removes <br> which conforms with WCAG 1.3.1 */
+
+<div class="ham-radio">
+    <img class="radio-knob" src="./assets/images/radio-knob.png" onclick="$('.radio-knob').addClass('radio-on'); $('.opening-link').removeClass('hidden-link'); document.getElementById('opening').play();">
+    <div class="backlight"></div>
+    <audio id="opening" src="./assets/audio/opening-message.mp3"></audio>
+
+    <img class="radio-base" src="./assets/images/radio-base.png">
+</div>
+
+<div class="fade-text opening-link hidden-link">
+[[Proceed to Manchester England, morning of December 23, 1940|StartGame]]
+</div>
+
+<</nobr>>
+:: StartGame
+<<set _vapour to [7, 12, 3, 16, 8, 14, 1, 9, 17, 5, 11, 15, 4, 6, 18, 2, 13, 10, 19]>>
+<div class="clock-container">
+    <img class="clock" src="./assets/images/clock.svg"/>
+</div>
+<<nobr>>
+<<audio "kettle" volume 0 fadeoverto 30 0.75>>
+<<audio "clock-tick" volume 0.15 loop play>>
+
+<div style="padding: 50px 0 115px;">
+<<type 90ms>>\
+<span class="typewriter">7:30 a.m. on Monday, December 22, 1940.</span>
+\<</type>>
+
+<<timed 5s t8n>>
+<p>The bombing has finally stopped. You have returned to your home in Cheetham Hill, either from your backyard air raid shelter or from the local community air raid shelter, located at the Cheetham Hill Assembly Halls.</p>
+
+<<next 5s>>
+<p>Someone unmasks the windows and someone else makes a big pot of Tetley’s tea. You all sit down around the kitchen table to try and make sense of the events of the night.</p>
+
+<<next 5s>>
+<p>Before the next blackout at sunset tonight, you have to [[gather more information|BackgroundKnowledge]] about the air raids and the damage that has been done to your city and neighbourhood.</p>
+<</timed>>
+</div>
+
+<div class="teacup-container">
+    <div class="vapour">
+        <<for _i to 0; _i lt _vapour.length; _i++>>
+            <<set _style to "--i:"+_vapour[_i]+";">>
+            <span @style="_style"></span>
+        <</for>>
+    </div>
+    <img class="teacup" src="./assets/images/teacup-a.svg"/>
+</div>
+<</nobr>>
+
+:: BackgroundKnowledge
+<<nobr>>
+<<audio "kettle" volume 0.75 fadeout>>
+<<audio "clock-tick" volume 0.15 fadeout>>
+<p class="fade-text">In addition to your background knowledge of the war, you also know that:</p>
+<ul>
+    <<timed 3s t8n>>
+    <li>At 6:38 p.m. on Sunday, December 22, the air raid sirens rang out.</li>
+    <<audio "air-raid" volume 0 fadeoverto 10 0.75>>
+    <<next>>
+    <li>The German air force dropped their bombs in “waves and waves”, sometimes a dozen at a time.</li>
+    <<next>>
+    <li>The bombs targeted central Manchester, including Manchester Cathedral, only 2.5 kilometres south of your home.</li>
+    <div class="firetruck-container">
+        <img style="width:500px;" src="./assets/images/firetruck.svg"/>
+    </div>
+    <<next>>
+    <li>You can smell smoke and the sky is lit up from the fires burning in the city.</li>
+    <<audio "fire-engine" volume 0 fadeoverto 10 0.55>>
+    <<next>>
+    <li>The Manchester fire brigade is depleted because many men and trucks were sent to Liverpool the day before when the bombs fell on that city.</li>
+    <</timed>>
+</ul>
+
+<<timed 17s t8n>>
+<p>You must decide what to do over the next eight hours: assess the information that you have and gather new information as best you can.</p>
+
+<p>The stakes are high. [[You want your family to be safe.|SelectHousehold1]]</p>
+<</timed>>
+
+<</nobr>>
+
+:: SelectHousehold1
+<<nobr>>
+<<audio "air-raid" volume 0.75 fadeout>>
+<h1 class="fade-text" style="text-align:center;">Round 1</h1>
+To begin Round 1, listen to the following important broadcast from Radio MAB.
+<div class="household-page">
+  <img style="width:650px;" src="./assets/images/radio-red.png">
+</div>
+[[Turn on your radio.|Hendersons1]]
+<</nobr>>
+:: LunchtimeReports
+<<nobr>>
+<<audio "kettle" volume 0.75 fadeout>>
+<<audio "fire" volume 0 fadeoverto 45 0.75>>
+
+<<timed 7s>>
+<section class="fade-text">
+    <div class="pulsating-light"></div>
+</section>
+
+<<for $i = 1;$i <= 100; $i++>>
+    <div class="circle-container">
+        <div class="circle"></div>
+    </div>
+<</for>>
+<</timed>>
+
+<h1>Round 2</h1>
+
+<<type 90ms>>\
+<span class="typewriter">1:00 p.m. on Monday, December 22, 1940.</span>
+\<</type>>
+
+<<timed 3.5s>>
+    <<audio "church-bell" volume 0.55 play>>
+<</timed>>
+
+<<timed 5s t8n>>
+<p>Some household members have gone to their workplaces to gather more information and check in on their fellow employees.</p>
+
+<<next>>
+<p>Work is virtually impossible so they have returned home for lunch.</p>
+
+<<next>>
+<p>And community members are on the move, visiting households in your neighbourhood to share information.</p>
+
+<<next>>
+<p>Everyone knows (or suspects) that Central Manchester is devastated– the Luftwaffe bombing raid has destroyed buildings, roads, and transportation infrastructure including railway lines.</p>
+
+<<next 2s>>
+<p>And everywhere, there is @@color:orange;fire, fire, fire.@@</p>
+
+<<next 7s>>
+<p>More tea has been brewed to accompany your lunch, and [[new information will be shared.|Hendersons2]]</p>
+
+<</timed>>
+<</nobr>>
+
+:: SelectHousehold2
+<<audio "fire" volume 0.75 fadeout>>
+<<audio "marker" volume 1 play>>
+<h1 class="fade-text" style="text-align:center;">Round 2</h1>
+
+[[Continue|Hendersons2]]
+
+<div class="household-page-form">
+  <img style="width:350px;" src="./assets/images/form.svg">
+</div>
+
+:: ConclusionRounds1and2
+<<nobr>>
+    <<audio "kettle" volume 0.75 fadeout>>
+    <div class="fade-text notepad-container">
+        <div class="notepad">
+            <div class="top">
+                <div style="display:flex;align-items:center;justify-content:end;height:100%;">
+                    <img class="megaphone-backlight" src="./assets/images/megaphone.svg" onclick="document.getElementById('recording3').play();" tabindex="0"/>
+                    <audio id="recording3" src="./assets/audio/r2p8.mp3"></audio>
+                </div>
+            </div>
+            <div class="paper-container">
+                <div class="paper">
+                    What a morning! There is so much devastation and chaos in your city.<br>
+                    <br>
+                    But now you have more information than when you started about the damage and potential threats in the air.<br>
+                    <br>
+                    Some evidence has come from people you trust: but are all witness authoritative? And do you believe your own point of view is trustworthy?<br>
+                    <br>
+                    In Rounds 3 and 4, you will gather even more information to make your ultimate decision. What will you do when the blackout hour arrives: you stay home or go to the community shelter?<br>
+                    <br>
+                    Remember: The stakes are high. Don’t be fooled by bad information.<br>
+                    <br>
+                    <p class="paper-end">[[Be alert and think critically.|FinalPanel]]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<</nobr>>
+
+:: FinalPanel
+<<nobr>>
+<<audio "game-theme" volume 0.75 fadeout>>
+<p id="panel1" class="fade-text" style="padding-top:55px;font-size:23px;text-align:center;">You have now finished Rounds 1 and 2, and you have more primary information about what is happening in your city.</p>
+
+<<timed 2s t8n>>
+<p id="panel1-2" style="text-align:center;">But can you make a decision about where to take shelter?</p>
+
+<<next 2s>>
+<div id="link1" style="position:absolute;left:0;bottom:-15px;display:flex;">
+    <img src="./assets/images/airraid-shelter.svg"/>
+    <p style="align-self:center;">An Anderson air raid shelter</p>
+</div>
+<</timed>>
+<</nobr>>

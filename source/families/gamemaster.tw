@@ -1,0 +1,93 @@
+:: Gamemaster1
+<<nobr>>
+<<set _seconds to 1500>>
+<div id="countdown">
+    <h1 style="font-size:15em;margin:0px;">25:00</h1>
+</div>
+<p class="fade-text hide" style="display:flex;justify-content:center;font-size:1.5em;">[[Proceed|Debrief1]]</p>
+<<set _running to false>>
+<<set _button_name to "Play">>
+<div id="toggleClock">
+	<<button _button_name>>
+
+		<<set _running to !_running>>
+		<<if _button_name is "Pause">>
+			<<set _button_name to "Play">>
+		<<else>>
+			<<set _button_name to "Pause">>
+		<</if>>
+		<<script>>$("#toggleClock .macro-button")[0].textContent = window.SugarCube.State.temporary.button_name;<</script>>
+	<</button>>
+	<<button "Skip >" Debrief1>><</button>>
+</div>
+
+<<silently>>
+	<<repeat 1s>>
+		<<if _running is true>>
+			<<set _seconds to _seconds - 1>>
+			<<if _seconds gt 0>>
+				<<set _min to Math.trunc(_seconds / 60) >>
+				<<set _sec to Math.trunc(_seconds % 60) >>
+				<<if String(_sec).length lt 2>>
+					<<set _sec to "0" + String(_sec) >>
+				<</if>>
+				<<replace "#countdown">><h1 style="font-size:15em;margin:0px;">_min:_sec</h1><</replace>>
+			<<else>>
+				<<replace "#countdown">><h1 style="font-size:10em;margin:0px;">Time's up!</h1><</replace>>
+				/* <<toggleclass ".fade-text" "hide">> */
+				<<timed 10s>>
+				<<goto Debrief1>>
+				<</timed>>
+				<<stop>>
+			<</if>>
+		<</if>>
+	<</repeat>>
+<</silently>>
+<</nobr>>
+
+:: Gamemaster2
+<<nobr>>
+<<set _seconds to 1200>>
+<div id="countdown">
+    <h1 style="font-size:15em;margin:0px;">20:00</h1>
+</div>
+<p class="fade-text hide" style="display:flex;justify-content:center;font-size:1.5em;">[[Proceed|Debrief1]]</p>
+<<set _running to false>>
+<<set _button_name to "Play">>
+<div id="toggleClock">
+	<<button _button_name>>
+
+		<<set _running to !_running>>
+		<<if _button_name is "Pause">>
+			<<set _button_name to "Play">>
+		<<else>>
+			<<set _button_name to "Pause">>
+		<</if>>
+		<<script>>$("#toggleClock .macro-button")[0].textContent = window.SugarCube.State.temporary.button_name;<</script>>
+	<</button>>
+	<<button "Skip >" Debrief2>><</button>>
+</div>
+
+<<silently>>
+	<<repeat 1s>>
+		<<if _running is true>>
+			<<set _seconds to _seconds - 1>>
+			<<if _seconds gt 0>>
+				<<set _min to Math.trunc(_seconds / 60) >>
+				<<set _sec to Math.trunc(_seconds % 60) >>
+				<<if String(_sec).length lt 2>>
+					<<set _sec to "0" + String(_sec) >>
+				<</if>>
+				<<replace "#countdown">><h1 style="font-size:15em;margin:0px;">_min:_sec</h1><</replace>>
+			<<else>>
+				<<replace "#countdown">><h1 style="font-size:10em;margin:0px;">Time's up!</h1><</replace>>
+				/* <<toggleclass ".fade-text" "hide">> */
+				<<timed 10s>>
+				<<goto Debrief2>>
+				<</timed>>
+				<<stop>>
+			<</if>>
+		<</if>>
+	<</repeat>>
+<</silently>>
+<</nobr>>
