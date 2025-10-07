@@ -59,7 +59,7 @@ Do we take shelter?
 
 <div style="padding: 50px 0 115px;">
 <<type 90ms>>\
-<span class="typewriter">7:30 a.m. on Monday, December 22, 1940.</span>
+<span class="typewriter" style="margin-bottom: 8vh;">7:30 a.m. on Monday, December 22, 1940.</span>
 \<</type>>
 
 <<timed 5s t8n>>
