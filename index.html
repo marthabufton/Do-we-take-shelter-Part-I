@@ -98,7 +98,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://7BB31A4A-9E10-48D9-A1CD-448A7E567A59// --><tw-storydata name="Do we take shelter?" startnode="22" creator="Twine (Twee 3) Language" creator-version="1.1.4" ifid="7BB31A4A-9E10-48D9-A1CD-448A7E567A59" zoom="" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* twine-user-stylesheet #1: "main.css" */
+	<!-- UUID://7BB31A4A-9E10-48D9-A1CD-448A7E567A59// --><tw-storydata name="Do we take shelter?" startnode="23" creator="Twine (Twee 3) Language" creator-version="1.1.4" ifid="7BB31A4A-9E10-48D9-A1CD-448A7E567A59" zoom="" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* twine-user-stylesheet #1: "main.css" */
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime');
 @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
 
@@ -4854,7 +4854,7 @@ What do you know now?
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="Evidence1" tags="" position="225,225" size="100,100">!Evidence Report (consolidate your information)
 Answer the Round 1 questions on your Evidence Report. Add up your Safety Points for this round.
 &lt;&lt;nobr&gt;&gt;
-&lt;&lt;set _seconds to 3&gt;&gt;
+&lt;&lt;set _seconds to 300&gt;&gt;
 &lt;div id=&quot;countdown&quot; style=&quot;min-height:unset&quot;&gt;
     &lt;h1 style=&quot;font-size:10em;margin:0px;&quot;&gt;5:00&lt;/h1&gt;
 &lt;/div&gt;
@@ -4897,7 +4897,53 @@ Answer the Round 1 questions on your Evidence Report. Add up your Safety Points 
 		&lt;&lt;/if&gt;&gt;
 	&lt;&lt;/repeat&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="Gamemaster1" tags="" position="350,225" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="Evidence2" tags="" position="350,225" size="100,100">!Evidence Report (consolidate your information)
+Answer the Round 2 questions on your Evidence Report. Add up your Safety Points for this round.
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _seconds to 300&gt;&gt;
+&lt;div id=&quot;countdown&quot; style=&quot;min-height:unset&quot;&gt;
+    &lt;h1 style=&quot;font-size:10em;margin:0px;&quot;&gt;5:00&lt;/h1&gt;
+&lt;/div&gt;
+&lt;p class=&quot;fade-text hide&quot; style=&quot;display:flex;justify-content:center;font-size:1.5em;&quot;&gt;[[Proceed|Debrief1]]&lt;/p&gt;
+&lt;&lt;set _running to false&gt;&gt;
+&lt;&lt;set _button_name to &quot;Play&quot;&gt;&gt;
+&lt;div id=&quot;toggleClock&quot;&gt;
+	&lt;&lt;button _button_name&gt;&gt;
+
+		&lt;&lt;set _running to !_running&gt;&gt;
+		&lt;&lt;if _button_name is &quot;Pause&quot;&gt;&gt;
+			&lt;&lt;set _button_name to &quot;Play&quot;&gt;&gt;
+		&lt;&lt;else&gt;&gt;
+			&lt;&lt;set _button_name to &quot;Pause&quot;&gt;&gt;
+		&lt;&lt;/if&gt;&gt;
+		&lt;&lt;script&gt;&gt;$(&quot;#toggleClock .macro-button&quot;)[0].textContent = window.SugarCube.State.temporary.button_name;&lt;&lt;/script&gt;&gt;
+	&lt;&lt;/button&gt;&gt;
+	&lt;&lt;button &quot;Skip &gt;&quot; Debrief2&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;
+
+&lt;&lt;silently&gt;&gt;
+	&lt;&lt;repeat 1s&gt;&gt;
+		&lt;&lt;if _running is true&gt;&gt;
+			&lt;&lt;set _seconds to _seconds - 1&gt;&gt;
+			&lt;&lt;if _seconds gt 0&gt;&gt;
+				&lt;&lt;set _min to Math.trunc(_seconds / 60) &gt;&gt;
+				&lt;&lt;set _sec to Math.trunc(_seconds % 60) &gt;&gt;
+				&lt;&lt;if String(_sec).length lt 2&gt;&gt;
+					&lt;&lt;set _sec to &quot;0&quot; + String(_sec) &gt;&gt;
+				&lt;&lt;/if&gt;&gt;
+				&lt;&lt;replace &quot;#countdown&quot;&gt;&gt;&lt;h1 style=&quot;font-size:10em;margin:0px;&quot;&gt;_min:_sec&lt;/h1&gt;&lt;&lt;/replace&gt;&gt;
+			&lt;&lt;else&gt;&gt;
+				&lt;&lt;replace &quot;#countdown&quot;&gt;&gt;&lt;h1 style=&quot;font-size:7em;margin:0px;&quot;&gt;Time&#39;s up!&lt;/h1&gt;&lt;&lt;/replace&gt;&gt;
+				/* &lt;&lt;toggleclass &quot;.fade-text&quot; &quot;hide&quot;&gt;&gt; */
+				/* &lt;&lt;timed 10s&gt;&gt;
+				&lt;&lt;goto Debrief2&gt;&gt;
+				&lt;&lt;/timed&gt;&gt; */
+				&lt;&lt;stop&gt;&gt;
+			&lt;&lt;/if&gt;&gt;
+		&lt;&lt;/if&gt;&gt;
+	&lt;&lt;/repeat&gt;&gt;
+&lt;&lt;/silently&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="Gamemaster1" tags="" position="475,225" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set _seconds to 900&gt;&gt;
 &lt;div id=&quot;countdown&quot;&gt;
     &lt;h1 style=&quot;font-size:15em;margin:0px;&quot;&gt;15:00&lt;/h1&gt;
@@ -4941,10 +4987,10 @@ Answer the Round 1 questions on your Evidence Report. Add up your Safety Points 
 		&lt;&lt;/if&gt;&gt;
 	&lt;&lt;/repeat&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="Gamemaster2" tags="" position="475,225" size="100,100">&lt;&lt;nobr&gt;&gt;
-&lt;&lt;set _seconds to 1200&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="Gamemaster2" tags="" position="600,225" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _seconds to 900&gt;&gt;
 &lt;div id=&quot;countdown&quot;&gt;
-    &lt;h1 style=&quot;font-size:15em;margin:0px;&quot;&gt;20:00&lt;/h1&gt;
+    &lt;h1 style=&quot;font-size:15em;margin:0px;&quot;&gt;15:00&lt;/h1&gt;
 &lt;/div&gt;
 &lt;p class=&quot;fade-text hide&quot; style=&quot;display:flex;justify-content:center;font-size:1.5em;&quot;&gt;[[Proceed|Debrief1]]&lt;/p&gt;
 &lt;&lt;set _running to false&gt;&gt;
@@ -4960,7 +5006,7 @@ Answer the Round 1 questions on your Evidence Report. Add up your Safety Points 
 		&lt;&lt;/if&gt;&gt;
 		&lt;&lt;script&gt;&gt;$(&quot;#toggleClock .macro-button&quot;)[0].textContent = window.SugarCube.State.temporary.button_name;&lt;&lt;/script&gt;&gt;
 	&lt;&lt;/button&gt;&gt;
-	&lt;&lt;button &quot;Skip &gt;&quot; Debrief2&gt;&gt;&lt;&lt;/button&gt;&gt;
+	&lt;&lt;button &quot;Skip &gt;&quot; Evidence2&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
 &lt;&lt;silently&gt;&gt;
@@ -4978,14 +5024,14 @@ Answer the Round 1 questions on your Evidence Report. Add up your Safety Points 
 				&lt;&lt;replace &quot;#countdown&quot;&gt;&gt;&lt;h1 style=&quot;font-size:10em;margin:0px;&quot;&gt;Time&#39;s up!&lt;/h1&gt;&lt;&lt;/replace&gt;&gt;
 				/* &lt;&lt;toggleclass &quot;.fade-text&quot; &quot;hide&quot;&gt;&gt; */
 				&lt;&lt;timed 10s&gt;&gt;
-				&lt;&lt;goto Debrief2&gt;&gt;
+				&lt;&lt;goto Evidence2&gt;&gt;
 				&lt;&lt;/timed&gt;&gt;
 				&lt;&lt;stop&gt;&gt;
 			&lt;&lt;/if&gt;&gt;
 		&lt;&lt;/if&gt;&gt;
 	&lt;&lt;/repeat&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="Hendersons1" tags="" position="600,225" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="Hendersons1" tags="" position="725,225" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;p id=&quot;panel1&quot; class=&quot;fade-text&quot; style=&quot;font-size:1.5em;text-align:center;padding-top:75px;padding-bottom:55px;&quot;&gt;&lt;b&gt;Moderators, household and community members:&lt;/b&gt; read your instructions in the gamer handbook and listen to the latest reporting from Radio MAB.&lt;/p&gt;
 
 &lt;div id=&quot;link1&quot; style=&quot;display:flex;height:100vh;justify-content:center;align-self:flex-end;&quot; onclick=&quot;$(&#39;#panel1&#39;).toggle(); $(&#39;#link1&#39;).toggle(); $(&#39;#panel2&#39;).toggle();&quot;&gt;
@@ -5024,7 +5070,7 @@ Answer the Round 1 questions on your Evidence Report. Add up your Safety Points 
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="Hendersons2" tags="" position="725,225" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="Hendersons2" tags="" position="850,225" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;audio &quot;fire&quot; volume 0.75 fadeout&gt;&gt;
 &lt;p id=&quot;panel1&quot; class=&quot;fade-text&quot; style=&quot;font-size:1.5em;text-align:center;padding-top:75px;padding-bottom:45px;&quot;&gt;&lt;b&gt;Moderators, household and community members:&lt;/b&gt; read your instructions in the gamer handbook carefully. Listen to more reporting from Radio MAB. The clock is ticking.&lt;/p&gt;
 
@@ -5063,7 +5109,7 @@ Answer the Round 1 questions on your Evidence Report. Add up your Safety Points 
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="Pigeons1" tags="" position="850,225" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="Pigeons1" tags="" position="975,225" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;audio &quot;pigeon-coo&quot; volume 0.75 fadeoverto 7 0&gt;&gt;
 
 &lt;p&gt;[[&lt; Return to main passage|Baileys2]]&lt;/p&gt;
@@ -5076,7 +5122,7 @@ Answer the Round 1 questions on your Evidence Report. Add up your Safety Points 
     &lt;img class=&quot;pigeon-base&quot; src=&quot;./assets/images/pigeon-base.png&quot;&gt;
 &lt;/div&gt;
 
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="Pigeons2" tags="" position="975,225" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="Pigeons2" tags="" position="1100,225" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;audio &quot;pigeon-coo&quot; volume 0.75 fadeoverto 7 0&gt;&gt;
 
 &lt;p&gt;[[&lt; Return to main passage|Baileys3]]&lt;/p&gt;
@@ -5089,7 +5135,7 @@ Answer the Round 1 questions on your Evidence Report. Add up your Safety Points 
     &lt;img class=&quot;pigeon-base&quot; src=&quot;./assets/images/pigeon-base.png&quot;&gt;
 &lt;/div&gt;
 
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="Sklars1" tags="" position="1100,225" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="Sklars1" tags="" position="1225,225" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;p id=&quot;panel1&quot; class=&quot;fade-text&quot; style=&quot;font-size:1.5em;text-align:center;padding-top:75px;padding-bottom:55px;&quot;&gt;&lt;b&gt;Moderators, household and community members:&lt;/b&gt; read your instructions in the gamer handbook and listen to the latest reporting from Radio MAB.&lt;/p&gt;
 
 &lt;div id=&quot;link1&quot; style=&quot;display:flex;height:100vh;justify-content:center;align-self:flex-end;&quot; onclick=&quot;$(&#39;#panel1&#39;).toggle(); $(&#39;#link1&#39;).toggle(); $(&#39;#panel2&#39;).toggle();&quot;&gt;
@@ -5128,7 +5174,7 @@ Answer the Round 1 questions on your Evidence Report. Add up your Safety Points 
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="Sklars2" tags="" position="1225,225" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="Sklars2" tags="" position="100,350" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;p id=&quot;panel1&quot; class=&quot;fade-text&quot; style=&quot;font-size:1.5em;text-align:center;padding-top:75px;padding-bottom:45px;&quot;&gt;&lt;b&gt;Moderators, household and community members:&lt;/b&gt; read your instructions in the gamer handbook carefully. Listen to more reporting from Radio MAB. The clock is ticking.&lt;/p&gt;
 
 &lt;div id=&quot;link1&quot; style=&quot;display:flex;height:100vh;justify-content:center;align-self:flex-end;&quot; onclick=&quot;$(&#39;#panel1&#39;).toggle(); $(&#39;#link1&#39;).toggle(); $(&#39;#panel2&#39;).toggle();&quot;&gt;
@@ -5166,7 +5212,7 @@ Answer the Round 1 questions on your Evidence Report. Add up your Safety Points 
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="StoryInit" tags="" position="100,350" size="100,100">&lt;&lt;cacheaudio &quot;game-theme&quot; &quot;./assets/audio/game-theme.mp3&quot;&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="StoryInit" tags="" position="225,350" size="100,100">&lt;&lt;cacheaudio &quot;game-theme&quot; &quot;./assets/audio/game-theme.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;opening-message&quot; &quot;./assets/audio/opening-message.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;pigeon12&quot; &quot;./assets/audio/pigeon12.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;pigeon34&quot; &quot;./assets/audio/pigeon34.mp3&quot;&gt;&gt;
@@ -5182,7 +5228,7 @@ Answer the Round 1 questions on your Evidence Report. Add up your Safety Points 
 &lt;&lt;cacheaudio &quot;westminster&quot; &quot;./assets/audio/westminster.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;clock-tick&quot; &quot;./assets/audio/clock-tick.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;air-raid&quot; &quot;./assets/audio/air-raid-siren.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;fire-engine&quot; &quot;./assets/audio/fire-engine.mp3&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="Start" tags="" position="225,350" size="100,100">&lt;div class=&quot;game-title&quot; style=&quot;margin-bottom: 55px;&quot;&gt;
+&lt;&lt;cacheaudio &quot;fire-engine&quot; &quot;./assets/audio/fire-engine.mp3&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="Start" tags="" position="350,350" size="100,100">&lt;div class=&quot;game-title&quot; style=&quot;margin-bottom: 55px;&quot;&gt;
 !Do we take shelter?
 !!//Evaluating “high stakes” information//
 &lt;/div&gt;&lt;&lt;nobr&gt;&gt; /* Leave nobr on this line - removes &lt;br&gt; which conforms with WCAG 1.3.1 */
@@ -5199,7 +5245,7 @@ Answer the Round 1 questions on your Evidence Report. Add up your Safety Points 
 [[Proceed to Manchester England, morning of December 23, 1940|StartGame]]
 &lt;/div&gt;
 
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="StartGame" tags="" position="350,350" size="100,100">&lt;&lt;set _vapour to [7, 12, 3, 16, 8, 14, 1, 9, 17, 5, 11, 15, 4, 6, 18, 2, 13, 10, 19]&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="StartGame" tags="" position="475,350" size="100,100">&lt;&lt;set _vapour to [7, 12, 3, 16, 8, 14, 1, 9, 17, 5, 11, 15, 4, 6, 18, 2, 13, 10, 19]&gt;&gt;
 &lt;div class=&quot;clock-container&quot;&gt;
     &lt;img class=&quot;clock&quot; src=&quot;./assets/images/clock.svg&quot;/&gt;
 &lt;/div&gt;
@@ -5232,7 +5278,7 @@ Answer the Round 1 questions on your Evidence Report. Add up your Safety Points 
     &lt;/div&gt;
     &lt;img class=&quot;teacup&quot; src=&quot;./assets/images/teacup-a.svg&quot;/&gt;
 &lt;/div&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="BackgroundKnowledge" tags="" position="475,350" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="BackgroundKnowledge" tags="" position="600,350" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;audio &quot;kettle&quot; volume 0.75 fadeout&gt;&gt;
 &lt;&lt;audio &quot;clock-tick&quot; volume 0.15 fadeout&gt;&gt;
 &lt;p class=&quot;fade-text&quot;&gt;In addition to your background knowledge of the war, you also know that:&lt;/p&gt;
@@ -5261,7 +5307,7 @@ Answer the Round 1 questions on your Evidence Report. Add up your Safety Points 
 &lt;p&gt;The stakes are high. [[You want your family to be safe.|SelectHousehold1]]&lt;/p&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="SelectHousehold1" tags="" position="600,350" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="SelectHousehold1" tags="" position="725,350" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;audio &quot;air-raid&quot; volume 0.75 fadeout&gt;&gt;
 &lt;h1 class=&quot;fade-text&quot; style=&quot;text-align:center;&quot;&gt;Round 1&lt;/h1&gt;
 To begin Round 1, listen to the following important broadcast from Radio MAB.
@@ -5269,7 +5315,7 @@ To begin Round 1, listen to the following important broadcast from Radio MAB.
   &lt;img style=&quot;width:650px;&quot; src=&quot;./assets/images/radio-red.png&quot;&gt;
 &lt;/div&gt;
 [[Turn on your radio.|Hendersons1]]
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="LunchtimeReports" tags="" position="725,350" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="LunchtimeReports" tags="" position="850,350" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;audio &quot;kettle&quot; volume 0.75 fadeout&gt;&gt;
 &lt;&lt;audio &quot;fire&quot; volume 0 fadeoverto 45 0.75&gt;&gt;
 
@@ -5314,7 +5360,7 @@ To begin Round 1, listen to the following important broadcast from Radio MAB.
 &lt;p&gt;More tea has been brewed to accompany your lunch, and [[new information will be shared.|Hendersons2]]&lt;/p&gt;
 
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="SelectHousehold2" tags="" position="850,350" size="100,100">&lt;&lt;audio &quot;fire&quot; volume 0.75 fadeout&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="SelectHousehold2" tags="" position="975,350" size="100,100">&lt;&lt;audio &quot;fire&quot; volume 0.75 fadeout&gt;&gt;
 &lt;&lt;audio &quot;marker&quot; volume 1 play&gt;&gt;
 &lt;h1 class=&quot;fade-text&quot; style=&quot;text-align:center;&quot;&gt;Round 2&lt;/h1&gt;
 
@@ -5322,7 +5368,7 @@ To begin Round 1, listen to the following important broadcast from Radio MAB.
 
 &lt;div class=&quot;household-page-form&quot;&gt;
   &lt;img style=&quot;width:350px;&quot; src=&quot;./assets/images/form.svg&quot;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="ConclusionRounds1and2" tags="" position="975,350" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="ConclusionRounds1and2" tags="" position="1100,350" size="100,100">&lt;&lt;nobr&gt;&gt;
     &lt;&lt;audio &quot;kettle&quot; volume 0.75 fadeout&gt;&gt;
     &lt;div class=&quot;fade-text notepad-container&quot;&gt;
         &lt;div class=&quot;notepad&quot;&gt;
@@ -5349,7 +5395,7 @@ To begin Round 1, listen to the following important broadcast from Radio MAB.
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="FinalPanel" tags="" position="1100,350" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="FinalPanel" tags="" position="1225,350" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;audio &quot;game-theme&quot; volume 0.75 fadeout&gt;&gt;
 &lt;p id=&quot;panel1&quot; class=&quot;fade-text&quot; style=&quot;padding-top:55px;font-size:23px;text-align:center;&quot;&gt;You have now finished Rounds 1 and 2, and you have more primary information about what is happening in your city.&lt;/p&gt;
 
