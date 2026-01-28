@@ -1,6 +1,6 @@
 # Do We Take Shelter?: *Evaluating "high stakes" information*
 
-Link to game: https://chantalmb.github.io/do_we_take_shelter-pt1/
+Link to game: https://marthabufton.github.io/Do-we-take-shelter-Part-I/
 
 ## Folder structure
 - `index.html`: Published game file
