@@ -226,7 +226,11 @@ To begin Round 1, listen to the following important broadcast from Radio MAB.
 <<next 2s>>
 <div id="link1" style="position:absolute;left:0;bottom:-15px;display:flex;">
     <img src="./assets/images/airraid-shelter.svg"/>
-    <p style="align-self:center;">An Anderson air raid shelter</p>
+    <p style="align-self:center;">Your Anderson air raid shelter: Could be a safety hazard<br><br>
+Is your shelter wet and cold? Is it deep enough in the ground? Will your archway withstand the weight of bomb debris?<br><br>
+Be careful and alert the Manchester City Council if you see any sign of water or archway sagging.<br><br>
+Stay safe!
+</p>
 </div>
 <</timed>>
 <</nobr>>

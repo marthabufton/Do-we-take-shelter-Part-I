@@ -32,7 +32,7 @@ What do you know now?
             <span @style="_style"></span>
         <</for>>
     </div>
-    /* <img class="teacup" src="./assets/images/teacup-a.svg"/> */
+    <img class="teacup" src="./assets/images/teacup-a.svg"/>
 
 </div>
 <</nobr>>
