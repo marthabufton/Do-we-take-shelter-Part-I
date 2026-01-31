@@ -66,7 +66,7 @@ Do we take shelter?
 <p>The bombing has finally stopped. You have returned to your home in Cheetham Hill, either from your backyard air raid shelter or from the local community air raid shelter, located at the Cheetham Hill Assembly Halls.</p>
 
 <<next 5s>>
-<p>Someone unmasks the windows and someone else makes a big pot of Tetley’s tea. You all sit down around the kitchen table to try and make sense of the events of the night.</p>
+<p>Someone unmasks the windows and someone else uses some of their weekly ration (2 ounces) to brew a big pot tea. You all sit down around the kitchen table to try and make sense of the events of the night.</p>
 
 <<next 5s>>
 <p>Before the next blackout at sunset tonight, you have to [[gather more information|BackgroundKnowledge]] about the air raids and the damage that has been done to your city and neighbourhood.</p>
