@@ -2,7 +2,7 @@
 !Evidence Report (consolidate your information)
 Answer the Round 1 questions on your Evidence Report. Add up your Safety Points for this round.
 <<nobr>>
-<<set _seconds to 3>>
+<<set _seconds to 300>>
 <div id="countdown" style="min-height:unset">
     <h1 style="font-size:10em;margin:0px;">5:00</h1>
 </div>
