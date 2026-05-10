@@ -169,21 +169,21 @@ To begin Round 1, listen to the following important broadcast from Radio MAB.
 <p>And everywhere, there is @@color:orange;fire, fire, fire.@@</p>
 
 <<next 7s>>
-<p>More tea has been brewed to accompany your lunch, and [[new information will be shared.|Hendersons2]]</p>
+<p>More tea has been brewed to accompany your lunch, and [[new information will be shared.|SelectHousehold2]]</p>
 
 <</timed>>
 <</nobr>>
 
 :: SelectHousehold2
-<<audio "fire" volume 0.75 fadeout>>
-<<audio "marker" volume 1 play>>
-<h1 class="fade-text" style="text-align:center;">Round 2</h1>
-
-[[Continue|Hendersons2]]
-
-<div class="household-page-form">
-  <img style="width:350px;" src="./assets/images/form.svg">
+<<nobr>>
+<<audio "air-raid" volume 0.75 fadeout>>
+<h1 class="fade-text" style="text-align:center;">Round 1</h1>
+To begin Round 2, listen to the following from Radio MAB.
+<div class="household-page">
+  <img style="width:650px;" src="./assets/images/radio-red.png">
 </div>
+[[Turn on your radio.|Hendersons2]]
+<</nobr>>
 
 :: ConclusionRounds1and2
 <<nobr>>
