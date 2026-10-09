@@ -44,7 +44,7 @@ Do we take shelter?
 </div>
 
 <div class="fade-text opening-link hidden-link">
-[[Proceed to Manchester England, morning of December 23, 1940|StartGame]]
+[[Proceed to Manchester England, morning of December 22, 1940|StartGame]]
 </div>
 
 <</nobr>>
@@ -177,7 +177,7 @@ To begin Round 1, listen to the following important broadcast from Radio MAB.
 :: SelectHousehold2
 <<nobr>>
 <<audio "air-raid" volume 0.75 fadeout>>
-<h1 class="fade-text" style="text-align:center;">Round 1</h1>
+<h1 class="fade-text" style="text-align:center;">Round 2</h1>
 To begin Round 2, listen to the following from Radio MAB.
 <div class="household-page">
   <img style="width:650px;" src="./assets/images/radio-red.png">
