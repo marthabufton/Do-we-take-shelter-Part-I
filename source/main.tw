@@ -7,23 +7,23 @@
 }
 
 :: StoryInit
-<<cacheaudio "game-theme" "./assets/audio/game-theme.mp3">>
-<<cacheaudio "opening-message" "./assets/audio/opening-message.mp3">>
-<<cacheaudio "pigeon12" "./assets/audio/pigeon12.mp3">>
-<<cacheaudio "pigeon34" "./assets/audio/pigeon34.mp3">>
+<<cacheaudio "game-theme" "./assets/audio/game-theme_normalized.wav">>
+<<cacheaudio "opening-message" "./assets/audio/opening-message_normalized.wav">>
+<<cacheaudio "pigeon12" "./assets/audio/pigeon12_normalized.wav">>
+<<cacheaudio "pigeon34" "./assets/audio/pigeon34_normalized.wav">>
 <<cacheaudio "kettle" "./assets/audio/kettle.mp3">>
-<<cacheaudio "marker" "./assets/audio/marker.mp3">>
+<<cacheaudio "marker" "./assets/audio/marker_normalized.wav">>
 <<cacheaudio "fire" "./assets/audio/fire.mp3">>
-<<cacheaudio "shop-bell" "./assets/audio/shop-bell.mp3">>
-<<cacheaudio "church-bell" "./assets/audio/church-bell.mp3">>
-<<cacheaudio "bicycle-bell" "./assets/audio/bicycle-bell.mp3">>
-<<cacheaudio "motor-car" "./assets/audio/motor-car.mp3">>
-<<cacheaudio "streetcar-station" "./assets/audio/streetcar-station.mp3">>
-<<cacheaudio "pigeon-coo" "./assets/audio/pigeon-coo.mp3">>
-<<cacheaudio "westminster" "./assets/audio/westminster.mp3">>
-<<cacheaudio "clock-tick" "./assets/audio/clock-tick.mp3">>
+<<cacheaudio "shop-bell" "./assets/audio/shop-bell_normalized.wav">>
+<<cacheaudio "church-bell" "./assets/audio/church-bell_normalized.wav">>
+<<cacheaudio "bicycle-bell" "./assets/audio/bicycle-bell_normalized.wav">>
+<<cacheaudio "motor-car" "./assets/audio/motor-car_normalized.wav">>
+<<cacheaudio "streetcar-station" "./assets/audio/streetcar-station_normalized.wav">>
+<<cacheaudio "pigeon-coo" "./assets/audio/pigeon-coo_normalized.wav">>
+<<cacheaudio "westminster" "./assets/audio/westminster_normalized.wav">>
+<<cacheaudio "clock-tick" "./assets/audio/clock-tick_normalized.wav">>
 <<cacheaudio "air-raid" "./assets/audio/air-raid-siren.mp3">>
-<<cacheaudio "fire-engine" "./assets/audio/fire-engine.mp3">>
+<<cacheaudio "fire-engine" "./assets/audio/fire-engine_normalized.wav">>
 
 :: StoryTitle
 Do we take shelter?
@@ -38,7 +38,7 @@ Do we take shelter?
 <div class="ham-radio">
     <img class="radio-knob" src="./assets/images/radio-knob.png" onclick="$('.radio-knob').addClass('radio-on'); $('.opening-link').removeClass('hidden-link'); document.getElementById('opening').play();">
     <div class="backlight"></div>
-    <audio id="opening" src="./assets/audio/opening-message.mp3"></audio>
+    <audio id="opening" src="./assets/audio/opening-message_normalized.wav"></audio>
 
     <img class="radio-base" src="./assets/images/radio-base.png">
 </div>
@@ -54,7 +54,8 @@ Do we take shelter?
     <img class="clock" src="./assets/images/clock.svg"/>
 </div>
 <<nobr>>
-<<audio "kettle" volume 0 fadeoverto 30 0.75>>
+/* <<audio "kettle" volume 0 fadeoverto 30 1 loop>> */
+<<audio "kettle" volume 0 fadeoverto 15 1 loop>>
 <<audio "clock-tick" volume 0.15 loop play>>
 
 <div style="padding: 50px 0 115px;">
@@ -86,7 +87,7 @@ Do we take shelter?
 
 :: BackgroundKnowledge
 <<nobr>>
-<<audio "kettle" volume 0.75 fadeout>>
+<<audio "kettle" volume 1 fadeout>>
 <<audio "clock-tick" volume 0.15 fadeout>>
 <p class="fade-text">In addition to your background knowledge of the war, you also know that:</p>
 <ul>
@@ -128,7 +129,7 @@ To begin Round 1, listen to the following important broadcast from Radio MAB.
 <</nobr>>
 :: LunchtimeReports
 <<nobr>>
-<<audio "kettle" volume 0.75 fadeout>>
+<<audio "kettle" volume 1 fadeout>>
 <<audio "fire" volume 0 fadeoverto 45 0.75>>
 
 <<timed 7s>>
@@ -176,7 +177,7 @@ To begin Round 1, listen to the following important broadcast from Radio MAB.
 
 :: SelectHousehold2
 <<nobr>>
-<<audio "air-raid" volume 0.75 fadeout>>
+<<audio "fire" volume 0.75 fadeout>>
 <h1 class="fade-text" style="text-align:center;">Round 2</h1>
 To begin Round 2, listen to the following from Radio MAB.
 <div class="household-page">
@@ -187,13 +188,13 @@ To begin Round 2, listen to the following from Radio MAB.
 
 :: ConclusionRounds1and2
 <<nobr>>
-    <<audio "kettle" volume 0.75 fadeout>>
+    <<audio "kettle" volume 1 fadeout>>
     <div class="fade-text notepad-container">
         <div class="notepad">
             <div class="top">
                 <div style="display:flex;align-items:center;justify-content:end;height:100%;">
                     <img class="megaphone-backlight" src="./assets/images/megaphone.svg" onclick="document.getElementById('recording3').play();" tabindex="0"/>
-                    <audio id="recording3" src="./assets/audio/r2p8.mp3"></audio>
+                    <audio id="recording3" src="./assets/audio/r2p8_normalized.wav"></audio>
                 </div>
             </div>
             <div class="paper-container">

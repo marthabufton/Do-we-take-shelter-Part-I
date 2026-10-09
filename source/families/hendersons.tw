@@ -11,7 +11,7 @@
             <div class="top">
                 <div style="display:flex;align-items:center;justify-content:end;height:100%;">
                     <img class="megaphone-backlight" src="./assets/images/megaphone.svg" onclick="document.getElementById('recording1').play();" tabindex="0"/>
-                    <audio id="recording1" src="./assets/audio/r1p5.mp3"></audio>
+                    <audio id="recording1" src="./assets/audio/r1p5_normalized.wav"></audio>
                 </div>
             </div>
             <div class="paper-container">
@@ -42,7 +42,7 @@
 
 :: Hendersons2
 <<nobr>>
-<<audio "fire" volume 0.75 fadeout>>
+/* <<audio "fire" volume 0.75 fadeout>> */
 <p id="panel1" class="fade-text" style="font-size:1.5em;text-align:center;padding-top:75px;padding-bottom:45px;"><b>Moderators, household and community members:</b> read your instructions in the gamer handbook carefully. Listen to more reporting from Radio MAB. The clock is ticking.</p>
 
 <div id="link1" style="display:flex;height:100vh;justify-content:center;align-self:flex-end;" onclick="$('#panel1').toggle(); $('#link1').toggle(); $('#panel2').toggle();">
@@ -54,7 +54,7 @@
             <div class="top">
                 <div style="display:flex;align-items:center;justify-content:end;height:100%;">
                     <img class="megaphone-backlight" src="./assets/images/megaphone.svg" onclick="document.getElementById('recording2').play();" tabindex="0"/>
-                    <audio id="recording2" src="./assets/audio/r2p7.mp3"></audio>
+                    <audio id="recording2" src="./assets/audio/r2p7_normalized.wav"></audio>
                 </div>
             </div>
             <div class="paper-container">
