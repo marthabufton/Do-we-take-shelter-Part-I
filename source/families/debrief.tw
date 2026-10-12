@@ -1,6 +1,6 @@
 :: Debrief1
 !Round 1 debrief
-<<audio "kettle" volume 0 fadeoverto 30 0.75>>
+<<audio "kettle" volume 0 fadeoverto 30 1 loop>>
 What do you now know?
 
 [[Proceed|LunchtimeReports]]
@@ -19,7 +19,7 @@ What do you now know?
 
 :: Debrief2
 !Round 2 debrief
-<<audio "kettle" volume 0 fadeoverto 30 0.75>>
+<<audio "kettle" volume 0 fadeoverto 30 1 loop>>
 What do you know now?
 
 [[Proceed|ConclusionRounds1and2]]

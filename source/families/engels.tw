@@ -11,7 +11,7 @@
             <div class="top">
                 <div style="display:flex;align-items:center;justify-content:end;height:100%;">
                     <img class="megaphone-backlight" src="./assets/images/megaphone.svg" onclick="document.getElementById('recording1').play();"/>
-                    <audio id="recording1" src="./assets/audio/r1p5.mp3"></audio>
+                    <audio id="recording1" src="./assets/audio/r1p5_normalized.wav"></audio>
                 </div>
             </div>
             <div class="paper-container">
@@ -53,7 +53,7 @@
             <div class="top">
                 <div style="display:flex;align-items:center;justify-content:end;height:100%;">
                     <img class="megaphone-backlight" src="./assets/images/megaphone.svg" onclick="document.getElementById('recording2').play();"/>
-                    <audio id="recording2" src="./assets/audio/r2p7.mp3"></audio>
+                    <audio id="recording2" src="./assets/audio/r2p7_normalized.wav"></audio>
                 </div>
             </div>
             <div class="paper-container">
