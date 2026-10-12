@@ -23,6 +23,7 @@
 <<cacheaudio "westminster" "./assets/audio/westminster_normalized.wav">>
 <<cacheaudio "clock-tick" "./assets/audio/clock-tick_normalized.wav">>
 <<cacheaudio "air-raid" "./assets/audio/air-raid-siren.mp3">>
+<<cacheaudio "air-raid-bbc" "./assets/audio/bbc-air-raid_normalized.mp3">>
 <<cacheaudio "fire-engine" "./assets/audio/fire-engine_normalized.wav">>
 
 :: StoryTitle
@@ -44,16 +45,58 @@ Do we take shelter?
 </div>
 
 <div class="fade-text opening-link hidden-link">
-[[Proceed to Manchester England, morning of December 22, 1940|StartGame]]
+[[Enter Manchester England, during December of 1940|SettingContext]]
 </div>
 
 <</nobr>>
+
+:: SettingContext
+<<nobr>>
+<<audio "air-raid" volume 0 fadeoverto 10 0.75>>
+<<audio "air-raid-bbc" volume 0 fadeoverto 15 1 loop>>
+
+<<for $i = 1;$i <= 100; $i++>>
+    <div class="snow-circle-container">
+        <div class="snow-circle"></div>
+    </div>
+<</for>>
+
+<div style="padding: 50px 0 115px;">
+    <<timed 1s t8n>>
+    <p>It's snowing in Manchester on December 22.</p>
+
+    <<next 5s>>
+    <p>The lights on your Christmas tree glow.</p>
+
+    <<next 3s>>
+    <p>It should be a Christmas miracle, but...</p>
+
+    <<next 3s>>
+    <p>All you can hear is the war outside your door...</p>
+
+    <<next 5s>>
+    <p>[[and you are afraid.|StartGame]]</p>
+
+    <</timed>>
+</div>
+
+<div class="tree-container">
+    <div class="tree">
+        <div class="tree-glow"></div>
+        <img class="tree-img" src="./assets/images/xmas-tree.svg" alt="Christmas tree" />
+    </div>
+</div>
+
+<</nobr>>
+
 :: StartGame
 <<set _vapour to [7, 12, 3, 16, 8, 14, 1, 9, 17, 5, 11, 15, 4, 6, 18, 2, 13, 10, 19]>>
 <div class="clock-container">
     <img class="clock" src="./assets/images/clock.svg"/>
 </div>
 <<nobr>>
+<<audio "air-raid" volume 0.75 fadeout>>
+<<audio "air-raid-bbc" volume 1 fadeout>>
 /* <<audio "kettle" volume 0 fadeoverto 30 1 loop>> */
 <<audio "kettle" volume 0 fadeoverto 15 1 loop>>
 <<audio "clock-tick" volume 0.15 loop play>>
@@ -138,8 +181,8 @@ To begin Round 1, listen to the following important broadcast from Radio MAB.
 </section>
 
 <<for $i = 1;$i <= 100; $i++>>
-    <div class="circle-container">
-        <div class="circle"></div>
+    <div class="fire-circle-container">
+        <div class="fire-circle"></div>
     </div>
 <</for>>
 <</timed>>
